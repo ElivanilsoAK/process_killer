@@ -1,17 +1,18 @@
 @echo off
 echo Installing Dependencies...
-pip install customtkinter psutil packaging pillow
+pip install -r requirements.txt
 
 echo.
 echo.
-echo Building GUI Executable...
-:: We use --noconsole to hide the terminal window
-:: --collect-all customtkinter ensures all theme files are included
-:: --icon=icon.ico sets the exe icon
-:: --add-data "icon.ico;." ensures the icon is available at runtime
-pyinstaller --noconsole --onefile --clean --name "ProcessKiller_GUI" --collect-all customtkinter --icon=icon.ico --add-data "icon.ico;." process_manager_gui.py
+echo Building Process Manager Elite...
+:: --noconsole: Hide terminal
+:: --collect-all customtkinter: Include CTK theme files
+:: --icon: Set exe icon
+:: --add-data: Include assets folder
+:: --name: Output filename
+pyinstaller --noconsole --onefile --clean --name "ProcessKiller" --collect-all customtkinter --icon="assets/icon.ico" --add-data "assets;assets" main.py
 
 echo.
 echo Build complete!
-echo The App is located at: %~dp0dist\ProcessKiller_GUI.exe
+echo The App is located at: %~dp0dist\ProcessKiller.exe
 pause

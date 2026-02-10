@@ -1,4 +1,6 @@
-psutil
 customtkinter
-packaging
+psutil
 pillow
+packaging
+rich
+pyinstaller
