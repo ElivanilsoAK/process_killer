@@ -1,0 +1,4 @@
+psutil
+customtkinter
+packaging
+pillow
